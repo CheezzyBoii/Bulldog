@@ -1,7 +1,7 @@
 # Simple Slack Bot
 A simple bot for the slack platfrom named bulldog
 
-### Includes thesemslash commands
+### Includes these slash commands
 ```
 /bulldog-ping - Check bot latency
 /bulldog-bark - Tell Bulldog to bark
