@@ -64,7 +64,8 @@ app.command("/bulldog-help", async ({ ack, respond }) => {
 /bulldog-ping - Check bot latency
 /bulldog-bark - Tell Bulldog to bark
 /bulldog-help - Show this help message
-/bulldog-fact - Get a random dog fact`
+/bulldog-fact - Get a random dog fact
+/bulldog-joke - Get a random joke`
   });
 });
 
