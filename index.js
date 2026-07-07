@@ -52,20 +52,47 @@ app.command("/bulldog-joke", async ({ ack, respond }) => {
 ${response.data.punchline}`
     });
   } catch (err) {
-    await respond({ text: "Failed to fetch a joke." });
+    await respond({ 
+      response_type: "in_channel",
+      text: "Failed to fetch a joke." 
+    });
+  }
+});
+
+app.command("/bulldog-image", async ({ ack, respond }) => {
+  await ack();
+
+  try {
+    const response = await axios.get("https://random.dog/woof.json");
+    await respond({
+      response_type: "in_channel",
+      text: "WOOF WOOF!",
+      blocks: [
+        { 
+          type: "image",
+          image_url: response.data.url,
+          alt_text: "Dog Image"
+        }
+      ]
+    });
+  } catch (err) {
+    await respond({ text: "WOOF ERROR WOOF!" });
   }
 });
 
 app.command("/bulldog-help", async ({ ack, respond }) => {
   await ack();
   await respond({
+    response_type: "in_channel",
     text:
-`Available Commands:
+`WOOF WOOF! I'm Bulldog, your scary Slack bot!
+Available Commands:
 /bulldog-ping - Check bot latency
 /bulldog-bark - Tell Bulldog to bark
-/bulldog-help - Show this help message
 /bulldog-fact - Get a random dog fact
-/bulldog-joke - Get a random joke`
+/bulldog-joke - Get a random joke
+/bulldog-image - Get a random dog image
+/bulldog-help - Show this help message`
   });
 });
 
