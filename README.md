@@ -12,7 +12,7 @@ A simple bot for the slack platfrom named bulldog
 
 ### Setup 
 
-#### Start with one command
+#### Start with one command (Not working will fix another time)
 
 ```
 curl -fsSL https://github.com/CheezzyBoii/Bulldog/raw/refs/heads/main/setup.sh | bash
