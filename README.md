@@ -1,7 +1,8 @@
-# Simple Slack Bot
+# Bulldog A Simple Slack Bot
 A simple bot for the slack platfrom named bulldog
 
-### Includes these slash commands
+
+## Includes these slash commands
 ```
 /bulldog-ping - Check bot latency
 /bulldog-bark - Tell Bulldog to bark
@@ -11,7 +12,7 @@ A simple bot for the slack platfrom named bulldog
 /bulldog-joke - Get a random joke
 ```
 
-### Setup 
+## Setup 
 
 #### Start with one command (Not working will fix another time)
 
@@ -59,3 +60,23 @@ Installation command: npm install pm2 -g
 pm2 start index.js --name bulldog
 pm2 list
 ```
+
+## Used APIs 
+Credit to the APIs used in this project
+    
+[Random Joke API](https://official-joke-api.appspot.com/) | [Repo](https://github.com/15dkatz/official_joke_api)
+    
+[Random Dog Image API](https://random.dog) | [Repo](https://github.com/AdenFlorian/random.dog)
+    
+[Random Dog Fact API](https://dogapi.dog) | [Repo](https://github.com/kinduff/dogapi.dog)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+This project is listed under the MIT license [MIT](https://choosealicense.com/licenses/mit/)
