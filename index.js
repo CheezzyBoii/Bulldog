@@ -66,7 +66,6 @@ app.command("/bulldog-image", async ({ ack, respond }) => {
     const response = await axios.get("https://random.dog/woof.json");
     await respond({
       response_type: "in_channel",
-      text: "WOOF WOOF!",
       blocks: [
         { 
           type: "image",
@@ -76,7 +75,27 @@ app.command("/bulldog-image", async ({ ack, respond }) => {
       ]
     });
   } catch (err) {
-    await respond({ text: "WOOF ERROR WOOF!" });
+    await respond({ text: "WOOF ERROR WOOF! Possible time out please try again." });
+  }
+});
+
+app.command("/bulldog-yes-no", async ({ ack, respond }) => {
+  await ack();
+  
+  try { 
+    const response = await axios.get("https://yesno.wtf/api");
+    await respond({
+      response_type: "in_channel",
+      blocks: [
+        {
+          type: "image",
+          image_url: response.data.image,
+          alt_text: response.data.answer
+        }
+      ]
+    });
+  } catch (err) {
+    await respond({ text: "Failed to fetch a yes/no answer." });
   }
 });
 
@@ -91,10 +110,12 @@ Available Commands:
 /bulldog-bark - Tell Bulldog to bark
 /bulldog-fact - Get a random dog fact
 /bulldog-joke - Get a random joke
+/bulldog-yes-no - Get a random yes or no to answer your question
 /bulldog-image - Get a random dog image
 /bulldog-help - Show this help message`
   });
 });
+
 
 
 (async () => {
