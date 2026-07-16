@@ -71,6 +71,8 @@ Credit to the APIs used in this project
     
 [Random Dog Fact API](https://dogapi.dog) | [Repo](https://github.com/kinduff/dogapi.dog)
 
+[Yes No API](https://yesno.wtf) | [Repo](https://github.com/dpromanko/yesno-wtf)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
